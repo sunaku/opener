@@ -13,33 +13,39 @@ require 'rbconfig'
 #
 #   Opener.system(thing_to_open_in_foreground)
 #
-# Open something in the foreground while suppressing output:
-#
-#   Opener.system(thing_to_open_in_foreground, 1 => :close)
-#
-# Open something in the foreground while suppressing errors:
-#
-#   Opener.system(thing_to_open_in_foreground, 2 => :close)
-#
 # Open something in the background (non-blocking call):
 #
 #   Opener.spawn(thing_to_open_in_background)
 #
-# Open something in the background while suppressing output:
-#
-#   Opener.spawn(thing_to_open_in_background, 1 => :close)
-#
-# Open something in the background while suppressing errors:
-#
-#   Opener.spawn(thing_to_open_in_background, 2 => :close)
-#
 # Open something in place of the current process:
 #
-#   Opener.exec(thing_to_open_in_this_process)
+#   Opener.exec(thing_to_open_in_place)
 #
 # Reveal the OS-specific command that is opening things:
 #
 #   puts Opener.command()
+#
+# === Suppression
+#
+# Open something while detaching terminal (close STDIN):
+#
+#   Opener.system(thing_to_open_in_foreground, 0 => :close)
+#   Opener.spawn(thing_to_open_in_background, 0 => :close)
+#   Opener.exec(thing_to_open_in_place, 0 => :close)
+#
+# Open something while suppressing output (close STDOUT):
+#
+#   Opener.system(thing_to_open_in_foreground, 1 => :close)
+#   Opener.spawn(thing_to_open_in_background, 1 => :close)
+#   Opener.exec(thing_to_open_in_place, 1 => :close)
+#
+# Open something while suppressing errors (close STDERR):
+#
+#   Opener.system(thing_to_open_in_foreground, 2 => :close)
+#   Opener.spawn(thing_to_open_in_background, 2 => :close)
+#   Opener.exec(thing_to_open_in_place, 2 => :close)
+#
+# See Kernel#spawn() documentation for more tips and tricks.
 #
 # == License
 #
