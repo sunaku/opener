@@ -50,6 +50,10 @@ Open something in the background while suppressing errors:
 
     Opener.spawn(thing_to_open_in_background, 2 => :close)
 
+Open something in place of the current process:
+
+    Opener.exec(thing_to_open_in_this_process)
+
 Reveal the OS-specific command that is opening things:
 
     puts Opener.command()

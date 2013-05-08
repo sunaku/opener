@@ -33,6 +33,10 @@ require 'rbconfig'
 #
 #   Opener.spawn(thing_to_open_in_background, 2 => :close)
 #
+# Open something in place of the current process:
+#
+#   Opener.exec(thing_to_open_in_this_process)
+#
 # Reveal the OS-specific command that is opening things:
 #
 #   puts Opener.command()
@@ -82,6 +86,16 @@ module Opener
     # @see Kernel#spawn()
     #
     def spawn *arguments
+      insert_command_into_arguments! arguments
+      super
+    end
+
+    #
+    # Opens the given things in place of the current process.
+    #
+    # @see Kernel#exec()
+    #
+    def exec *arguments
       insert_command_into_arguments! arguments
       super
     end
