@@ -61,12 +61,13 @@ module Opener
     #
     def command
       @command ||=
-        case RbConfig::CONFIG['host_os']
+        case host_os = RbConfig::CONFIG['host_os']
         when /darwin/i then 'open'
         when /cygwin/i then 'cygstart'
         when /linux|bsd/i then 'xdg-open'
         when /mswin|mingw/i then 'start'
         when /sunos|solaris/i then '/usr/dt/bin/sdtwebclient'
+        else raise NotImplementedError, host_os
         end
     end
 
