@@ -66,9 +66,14 @@ See Kernel#spawn() documentation for more tips and tricks.
 
 ## License
 
-This library is distributed under the same terms as Ruby:
-<http://www.ruby-lang.org/en/about/license.txt>
+> Like my work? :+1: Please [spare a life] today as thanks!
+> :cow::pig::chicken::fish::speak_no_evil::v::revolving_hearts:
+[spare a life]: https://sunaku.github.io/vegan-for-life.html
 
 Copyright 2013 Suraj N. Kurapati <https://github.com/sunaku>
 
-Thanks to 2010 David A. Wheeler <http://www.dwheeler.com/essays/open-files-urls.html>
+Thanks to 2010 David A. Wheeler
+<http://www.dwheeler.com/essays/open-files-urls.html>
+
+This library is distributed under the same terms as Ruby:
+<http://www.ruby-lang.org/en/about/license.txt>
